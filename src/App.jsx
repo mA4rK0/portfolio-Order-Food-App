@@ -33,7 +33,7 @@ function App() {
             <Search />
           </section>
         </section>
-        <section className=" hover:border-slate-700 hover:bg-slate-700 border-slate-800 bg-slate-800 justify-center items-center text-white border rounded-lg min-[320px]:w-[360px] mx-auto mt-6 relative">
+        <section className="border-slate-800 bg-slate-800 justify-center items-center text-white border rounded-lg min-[320px]:w-[360px] mx-auto mt-6 relative">
           <Money />
         </section>
       </section>
