@@ -2,7 +2,9 @@ function Notification() {
   return (
     <>
       <section className="notification">
-        <i className="fa-regular fa-bell"></i>
+        <button>
+          <i className="fa-regular fa-bell"></i>
+        </button>
       </section>
     </>
   );

@@ -34,7 +34,7 @@ const FormUsername = ({ cancel, submit, setAppear, username }) => {
             <label htmlFor="name" className="font-bold text-md">
               Name
             </label>
-            <input type="text" onChange={handleChange} value={inputValue} id="name" className="w-full bg-cyan-700 rounded-md p-1 opacity-95 focus:outline-none focus:ring-white focus:ring-1 focus:border-white" />
+            <input type="text" onChange={handleChange} value={inputValue} id="name" className="w-full bg-input rounded-md p-1 opacity-95 focus:outline-none focus:ring-white focus:ring-1 focus:border-white" />
           </section>
           <section className="buttons flex flex-wrap justify-center gap-x-44 mt-5 xl:gap-x-60 lg:gap-x-72 md:gap-x-60 min-[320px]:gap-x-24">
             <button className="border-2 border-white rounded-md px-4 py-1 ease-in-out duration-300 transition hover:bg-yes hover:border-yes" type="submit">

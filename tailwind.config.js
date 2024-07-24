@@ -6,6 +6,8 @@ export default {
       colors: {
         yes: "#16a34a",
         no: "#dc2626",
+        input: "#172554",
+        primary: "#1e293b",
       },
     },
   },

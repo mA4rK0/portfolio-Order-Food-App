@@ -4,6 +4,7 @@ import Notification from "./components/Notification";
 import Search from "./components/Search";
 import FormUsername from "./components/FormUsername";
 import Money from "./components/Money";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [isAppear, setAppear] = useState(false);
@@ -33,9 +34,10 @@ function App() {
             <Search />
           </section>
         </section>
-        <section className="border-slate-800 bg-slate-800 justify-center items-center text-white border rounded-lg min-[320px]:w-[360px] mx-auto mt-6">
+        <section className="border-primary bg-primary justify-center items-center text-white border rounded-lg min-[320px]:w-[360px] mx-auto mt-6">
           <Money />
         </section>
+        <SearchBar />
       </section>
       {isAppear && <FormUsername cancel={handleAppear} submit={changeName} setAppear={setAppear} username={username} />}
     </>
