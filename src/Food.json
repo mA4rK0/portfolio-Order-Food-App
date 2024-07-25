@@ -1,7 +1,8 @@
 {
   "menu": [
     {
-      "category": "noodles",
+      "category": "Noodles",
+      "icon": "🍜",
       "items": [
         {
           "name": "Chicken Noodles",
@@ -26,7 +27,8 @@
       ]
     },
     {
-      "category": "pizza",
+      "category": "Pizza",
+      "icon": "🍕",
       "items": [
         {
           "name": "Pepperoni Pizza",
@@ -51,7 +53,8 @@
       ]
     },
     {
-      "category": "fried rice",
+      "category": "Fried Rice",
+      "icon": "🍚",
       "items": [
         {
           "name": "Fried Rice",
@@ -76,7 +79,8 @@
       ]
     },
     {
-      "category": "drinks",
+      "category": "Drinks",
+      "icon": "🍹",
       "items": [
         {
           "name": "Root Beer",
@@ -102,6 +106,7 @@
     },
     {
       "category": "Hotplate",
+      "icon": "♨️",
       "items": [
         {
           "name": "Beef Hotplate",
@@ -121,7 +126,8 @@
       ]
     },
     {
-      "category": "ice cream",
+      "category": "Ice Cream",
+      "icon": "🍨",
       "items": [
         {
           "name": "Vanilla Ice Cream",

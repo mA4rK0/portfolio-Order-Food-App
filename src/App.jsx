@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import FormUsername from "./components/FormUsername";
 import Money from "./components/Money";
 import SearchBar from "./components/SearchBar";
+import FoodIcons from "./components/FoodIcons";
 
 function App() {
   const [isAppear, setAppear] = useState(false);
@@ -38,6 +39,7 @@ function App() {
           <Money />
         </section>
         <SearchBar />
+        <FoodIcons />
       </section>
       {isAppear && <FormUsername cancel={handleAppear} submit={changeName} setAppear={setAppear} username={username} />}
     </>
