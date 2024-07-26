@@ -1,4 +1,5 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 
 const FormUsername = () => {
@@ -19,6 +20,35 @@ const FormUsername = () => {
     navigate("/");
   }
 
+=======
+import { GlobalContext } from "../context/globalStorage";
+import { useContext } from "react";
+
+const FormUsername = () => {
+  // const values = useContext(GlobalContext);
+
+  // const [inputValue, setValue] = useState(values.username);
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   const value = inputValue.split(" ").join("");
+  //   if (value !== "") {
+  //     values.changeName(inputValue);
+  //     values.setAppear(false);
+  //   }
+  // }
+
+  // function handleBtn(btnType) {
+  //   return function (e) {
+  //     e.preventDefault();
+  //     if (btnType === "cancel") {
+  //       values.handleAppear();
+  //     }
+  //   };
+  // }
+
+>>>>>>> c0c51654c0b458ab068e53c3ab3e8d21345fdc4f
   // function handleChange(e) {
   //   setValue(e.target.value);
   // }
@@ -62,7 +92,11 @@ const FormUsername = () => {
             <button className="border-2 border-white rounded-md px-4 py-1 ease-in-out duration-300 transition hover:bg-yes hover:border-yes" type="submit">
               Confirm
             </button>
+<<<<<<< HEAD
             <button className="border-2 border-white rounded-md px-2.5 ease-in-out duration-300 transition hover:bg-no hover:border-no" onClick={handleCancel}>
+=======
+            <button className="border-2 border-white rounded-md px-2.5 ease-in-out duration-300 transition hover:bg-no hover:border-no" onClick={formValues.handleBtn("cancel")}>
+>>>>>>> c0c51654c0b458ab068e53c3ab3e8d21345fdc4f
               Cancel
             </button>
           </section>
