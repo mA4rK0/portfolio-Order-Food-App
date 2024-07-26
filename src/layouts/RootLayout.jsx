@@ -21,8 +21,13 @@ function RootLayout() {
   return (
     <>
       <Outlet />
-      <nav className={`bottom-0 fixed text-white bg-black w-full ${isBottom ? "bg-black" : "bg-black bg-opacity-80 backdrop-blur-sm"}`}>
-        <NavLink to="/">🏠</NavLink> | <NavLink to="/username">🤖</NavLink>
+      <nav className={`bottom-0 fixed flex justify-evenly text-white bg-black w-full ${isBottom ? "bg-black" : "bg-black bg-opacity-80 backdrop-blur-sm"}`}>
+        <NavLink to="/">
+          <i className="fa-solid fa-house"></i>
+        </NavLink>
+        <NavLink to="/username">
+          <i className="fa-solid fa-user"></i>
+        </NavLink>
       </nav>
     </>
   );
