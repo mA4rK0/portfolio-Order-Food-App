@@ -6,7 +6,7 @@ function FoodIcons() {
 
   return (
     <>
-      <section className="text-white grid grid-cols-3 justify-items-center mt-96 gap-y-11">
+      <section className="text-white grid grid-cols-3 justify-items-center mt-8 gap-y-11">
         {categories.map(({ category, icon }, index) => (
           <section key={index}>
             <button>
