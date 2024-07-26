@@ -1,25 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const FormUsername = ({ cancel, submit, setAppear, username }) => {
-  const [inputValue, setValue] = useState(username);
+const FormUsername = () => {
+  const [inputValue, setValue] = useState(localStorage.getItem("username"));
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    const value = inputValue.split(" ").join("");
+    const value = inputValue.trim();
     if (value !== "") {
-      submit(inputValue);
-      setAppear(false);
+      localStorage.setItem("username", value);
+      navigate("/");
     }
   }
 
-  function handleBtn(btnType) {
-    return function (e) {
-      e.preventDefault();
-      if (btnType === "cancel") {
-        cancel();
-      }
-    };
+  function handleCancel() {
+    navigate("/");
   }
 
   function handleChange(e) {
@@ -40,7 +37,7 @@ const FormUsername = ({ cancel, submit, setAppear, username }) => {
             <button className="border-2 border-white rounded-md px-4 py-1 ease-in-out duration-300 transition hover:bg-yes hover:border-yes" type="submit">
               Confirm
             </button>
-            <button className="border-2 border-white rounded-md px-2.5 ease-in-out duration-300 transition hover:bg-no hover:border-no" onClick={handleBtn("cancel")}>
+            <button className="border-2 border-white rounded-md px-2.5 ease-in-out duration-300 transition hover:bg-no hover:border-no" onClick={handleCancel}>
               Cancel
             </button>
           </section>

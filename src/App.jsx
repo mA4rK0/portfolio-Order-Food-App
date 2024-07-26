@@ -1,34 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Username from "./components/Username";
 import Notification from "./components/Notification";
 import Search from "./components/Search";
-import FormUsername from "./components/FormUsername";
 import Money from "./components/Money";
 import SearchBar from "./components/SearchBar";
 import FoodIcons from "./components/FoodIcons";
 
 function App() {
-  const [isAppear, setAppear] = useState(false);
-  const [username, setUsername] = useState("User1234");
+  const [username, setUsername] = useState(localStorage.getItem("username") || "User1234");
+  const navigate = useNavigate();
 
-  function changeName(name) {
-    setUsername(name);
-  }
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
 
-  function handleAppear() {
-    setAppear(!isAppear);
+  function handleUsernameClick() {
+    navigate("/username");
   }
 
   return (
     <>
-      <section className={`formAppear ${isAppear && "hidden"}`}>
+      <section className={`formAppear`}>
         <section className="header flex flex-wrap justify-between mt-4">
           <section className="left flex flex-wrap ml-4">
             <Photo />
             <section className="flex flex-col text-white">
               <p className="ml-1.5 text-sm">Customer</p>
-              <Username onClick={handleAppear} name={username} />
+              <Username onClick={handleUsernameClick} name={username} />
             </section>
           </section>
           <section className="right flex flex-wrap items-center text-3xl gap-x-5 mr-4 text-white">
@@ -42,7 +45,6 @@ function App() {
         <SearchBar />
         <FoodIcons />
       </section>
-      {isAppear && <FormUsername cancel={handleAppear} submit={changeName} setAppear={setAppear} username={username} />}
     </>
   );
 }

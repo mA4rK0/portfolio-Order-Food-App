@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import App from "../App";
-import Tes from "../components/tes";
+import FormUsername from "../components/FormUsername";
 
 export const router = createBrowserRouter([
   {
@@ -9,12 +9,12 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <App />,
       },
       {
-        path: "/tes",
-        element: <Tes />,
+        path: "username",
+        element: <FormUsername />,
       },
     ],
   },
