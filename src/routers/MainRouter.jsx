@@ -3,8 +3,6 @@ import RootLayout from "../layouts/RootLayout";
 import App from "../App";
 import FormUsername from "../components/FormUsername";
 
-//tes
-
 export const router = createBrowserRouter([
   {
     path: "/",
