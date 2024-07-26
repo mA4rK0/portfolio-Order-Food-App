@@ -7,6 +7,7 @@ import Search from "./components/Search";
 import Money from "./components/Money";
 import SearchBar from "./components/SearchBar";
 import FoodIcons from "./components/FoodIcons";
+import { useContext } from "react";
 
 function App() {
   const [username, setUsername] = useState(localStorage.getItem("username") || "User1234");
