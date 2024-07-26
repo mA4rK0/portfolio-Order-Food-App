@@ -3,8 +3,7 @@ import RootLayout from "../layouts/RootLayout";
 import App from "../App";
 import FormUsername from "../components/FormUsername";
 
-import { GlobalContext } from "../context/globalStorage";
-import { useContext } from "react";
+//tes
 
 export const router = createBrowserRouter([
   {
@@ -12,11 +11,11 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <App />,
       },
       {
-        path: "/username",
+        path: "username",
         element: <FormUsername />,
       },
     ],
