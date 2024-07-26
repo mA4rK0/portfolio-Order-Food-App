@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import App from "../App";
-import Tes from "../components/tes";
+import FormUsername from "../components/FormUsername";
+
+import { GlobalContext } from "../context/globalStorage";
+import { useContext } from "react";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +16,8 @@ export const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "/tes",
-        element: <Tes />,
+        path: "/username",
+        element: <FormUsername />,
       },
     ],
   },
