@@ -1,15 +1,25 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function AddMoney({ isMoney, isSwitch, currentMoney, moreMoney }) {
+function AddMoreMoney() {
+  const navigate = useNavigate();
   const [oriMoney, setChangeMoney] = useState(0);
+  const [disMoney, setDisMoney] = useState(localStorage.getItem("money"));
+
+  function nevermind(e) {
+    navigate("/");
+  }
 
   function handleMoney(e) {
     e.preventDefault();
 
     const value = parseFloat(oriMoney);
-    const num = parseFloat(currentMoney);
+    const num = parseFloat(disMoney);
+    const totalMoney = Math.round((num + value) * 100) / 100;
     if (value) {
-      moreMoney(Math.round((num + value) * 100) / 100);
+      localStorage.setItem("money", totalMoney);
+      setDisMoney(totalMoney);
+      navigate("/");
     }
   }
 
@@ -19,14 +29,14 @@ function AddMoney({ isMoney, isSwitch, currentMoney, moreMoney }) {
 
   return (
     <>
-      <section className="flex flex-col justify-center items-center relative">
+      <section className="flex flex-col justify-center items-center relative text-white">
         <h2 className="text-xl">Your Money:</h2>
         <section className="border ease-in-out duration-300 transition hover:shadow-no hover:opacity-80 hover:shadow-md text-lg text-bold rounded-full flex justify-center items-center w-7 h-7 bg-no border-no absolute top-1 right-1">
-          <button className="pb-1" onClick={isSwitch}>
+          <button className="pb-1" onClick={(e) => nevermind(e)}>
             x
           </button>
         </section>
-        <h2 className="text-3xl font-bold text-yes">${isMoney}</h2>
+        <h2 className="text-3xl font-bold text-yes">${disMoney}</h2>
         <p className="pt-4">How much money do you want to add:</p>
         <form onSubmit={(e) => handleMoney(e)}>
           <section className="py-3 flex flex-col gap-y-4">
@@ -39,4 +49,4 @@ function AddMoney({ isMoney, isSwitch, currentMoney, moreMoney }) {
   );
 }
 
-export default AddMoney;
+export default AddMoreMoney;
