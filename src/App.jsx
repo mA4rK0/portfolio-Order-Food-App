@@ -7,6 +7,9 @@ import Search from "./components/Search";
 import Money from "./components/Money";
 import SearchBar from "./components/SearchBar";
 import FoodIcons from "./components/FoodIcons";
+import Popular from "./components/Popular";
+import Menu from "./pages/Menu";
+import SeeAllMenu from "./components/SeeAllMenu";
 
 function App() {
   const [username, setUsername] = useState(localStorage.getItem("username") || "User1234");
@@ -44,6 +47,7 @@ function App() {
         </section>
         <SearchBar />
         <FoodIcons />
+        <SeeAllMenu />
       </section>
     </>
   );

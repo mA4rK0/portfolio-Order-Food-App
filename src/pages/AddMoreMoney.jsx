@@ -29,7 +29,7 @@ function AddMoreMoney() {
 
   return (
     <>
-      <section className="flex flex-col justify-center items-center relative text-white">
+      <section className="flex flex-col justify-center w-full lg:w-2/5 lg:mx-auto md:mx-auto md:w-2/3 mt-48 items-center relative text-white border-primary bg-primary border rounded-lg">
         <h2 className="text-xl">Your Money:</h2>
         <section className="border ease-in-out duration-300 transition hover:shadow-no hover:opacity-80 hover:shadow-md text-lg text-bold rounded-full flex justify-center items-center w-7 h-7 bg-no border-no absolute top-1 right-1">
           <button className="pb-1" onClick={(e) => nevermind(e)}>
