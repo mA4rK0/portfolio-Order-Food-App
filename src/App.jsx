@@ -7,8 +7,6 @@ import Search from "./components/Search";
 import Money from "./components/Money";
 import SearchBar from "./components/SearchBar";
 import FoodIcons from "./components/FoodIcons";
-import Popular from "./components/Popular";
-import Menu from "./pages/Menu";
 import SeeAllMenu from "./components/SeeAllMenu";
 
 function App() {

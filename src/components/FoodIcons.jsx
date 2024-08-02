@@ -1,4 +1,3 @@
-import { useState } from "react";
 import foodData from "../Food.json";
 
 function FoodIcons() {
