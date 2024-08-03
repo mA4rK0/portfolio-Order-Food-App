@@ -4,6 +4,7 @@ import App from "../App";
 import FormUsername from "../components/FormUsername";
 import AddMoreMoney from "../pages/AddMoreMoney";
 import Menu from "../pages/Menu";
+import AMenu from "../pages/A-Menu";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "menu",
         element: <Menu />,
+      },
+      {
+        path: "menu/:id",
+        element: <AMenu />,
       },
     ],
   },
