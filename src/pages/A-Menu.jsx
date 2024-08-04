@@ -36,10 +36,26 @@ export default function AMenu() {
             </button>
             <img src={`../src/img/thumb/${menu.image}`} className="my-6 mx-auto w-72 h-[13.296rem]" />
           </section>
-          <section className="bottom-element bg-input rounded-tl-2xl">
-            <section className="flex flex-col"></section>
-            <h1>{menu.name}</h1>
-            <p>{menu.description}</p>
+          <section className="bottom-element bg-input rounded-tl-[2.5rem]">
+            <section className="flex flex-col pt-4 gap-y-3">
+              <section className="flex flex-wrap justify-between px-5 items-center">
+                <p className="font-semibold text-2xl rounded-full bg-black p-1">{menu.status}</p>
+                <p className="text-yes text-2xl font-bold">$20</p>
+              </section>
+              <section className="flex flex-wrap justify-between px-5 items-center">
+                <p className="font-medium text-xl">{menu.name}</p>
+                <section className="flex flex-wrap gap-x-4 items-center">
+                  <section className="border ease-in-out duration-300 transition hover:shadow-white hover:opacity-80 hover:shadow-md text-lg text-bold rounded-full flex justify-center items-center w-6 h-6 bg-black border-white">
+                    <button className="pb-1">-</button>
+                  </section>
+                  <p className="text-lg font-normal">1</p>
+                  <section className="border ease-in-out duration-300 transition hover:shadow-white hover:opacity-80 hover:shadow-md text-lg text-bold rounded-full flex justify-center items-center w-6 h-6 bg-black border-white">
+                    <button className="pb-1">+</button>
+                  </section>
+                </section>
+              </section>
+              <p className="flex items-center pl-5">{menu.description}</p>
+            </section>
           </section>
         </section>
       </>
