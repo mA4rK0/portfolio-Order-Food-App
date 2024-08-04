@@ -11,7 +11,7 @@ function Menu() {
           {category.items.map(({ name, price, image, id }) => (
             <section key={id} className="border w-40 h-56 rounded-3xl flex flex-col items-center pt-6 bg-zinc-50 cursor-pointer">
               <Link to={`/menu/${id}`}>
-                <img className="w-[8rem] h-[6.188rem] rounded-2xl" src={`../src/img/thumb/${image}`} alt="Chicken Noodles" />
+                <img className="mx-auto w-[8rem] h-[6.188rem] rounded-2xl" src={`../src/img/thumb/${image}`} alt="Chicken Noodles" />
                 <section className="flex flex-col text-lg font-semibold items-center pt-3">
                   <p className="text-center">{name}</p>
                   <p className="text-yes">${price}</p>
