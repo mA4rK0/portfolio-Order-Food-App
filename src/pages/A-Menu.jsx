@@ -36,7 +36,8 @@ export default function AMenu() {
             </button>
             <img src={`../src/img/thumb/${menu.image}`} className="my-6 mx-auto w-72 h-[13.296rem]" />
           </section>
-          <section className="text-white">
+          <section className="bottom-element bg-input rounded-tl-2xl">
+            <section className="flex flex-col"></section>
             <h1>{menu.name}</h1>
             <p>{menu.description}</p>
           </section>
