@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function GetClassName({ isActive }) {
   return isActive ? "text-yes" : "";
@@ -7,6 +8,8 @@ function GetClassName({ isActive }) {
 
 function RootLayout() {
   const [isBottom, setAtBottom] = useState(true);
+  const location = useLocation();
+  const hideNavbar = location.pathname.startsWith("/menu/");
 
   useEffect(() => {
     function handleScroll() {
@@ -28,17 +31,19 @@ function RootLayout() {
         <section className="grow mb-4">
           <Outlet />
         </section>
-        <nav className={`flex justify-evenly h-10 text-xl items-center text-white bg-black w-full ${isBottom ? "bg-black" : "bg-black bg-opacity-80 backdrop-blur-sm bottom-0 fixed"}`}>
-          <NavLink to="/" className={GetClassName}>
-            <i className="fa-solid fa-house"></i>
-          </NavLink>
-          <NavLink to="/username" className={GetClassName}>
-            <i className="fa-solid fa-user"></i>
-          </NavLink>
-          <NavLink to="/money" className={GetClassName}>
-            <i className="fa-solid fa-wallet"></i>
-          </NavLink>
-        </nav>
+        {!hideNavbar && (
+          <nav className={`flex justify-evenly h-10 text-xl items-center text-white bg-black w-full ${isBottom ? "bg-black" : "bg-black bg-opacity-80 backdrop-blur-sm bottom-0 fixed"}`}>
+            <NavLink to="/" className={GetClassName}>
+              <i className="fa-solid fa-house"></i>
+            </NavLink>
+            <NavLink to="/username" className={GetClassName}>
+              <i className="fa-solid fa-user"></i>
+            </NavLink>
+            <NavLink to="/money" className={GetClassName}>
+              <i className="fa-solid fa-wallet"></i>
+            </NavLink>
+          </nav>
+        )}
       </div>
     </>
   );
