@@ -41,7 +41,7 @@ export default function AMenu() {
             <section className="flex flex-col pt-4 gap-y-3">
               <section className="flex flex-wrap justify-between px-5 items-center">
                 <p className="font-semibold text-2xl rounded-full bg-black p-1">{menu.status}</p>
-                <p className="text-yes text-2xl font-bold">$20</p>
+                <p className="text-yes text-2xl font-bold">${menu.price}</p>
               </section>
               <section className="flex flex-wrap justify-between px-5 items-center">
                 <p className="font-medium text-xl">{menu.name}</p>

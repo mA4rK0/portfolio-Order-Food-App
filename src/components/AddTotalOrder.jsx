@@ -16,6 +16,8 @@ export default function AddTotalOrder() {
     e.preventDefault();
   }
 
+  function changeItem(e) {}
+
   return (
     <>
       <form onSubmit={(e) => handleForm(e)}>
