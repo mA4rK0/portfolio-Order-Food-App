@@ -5,11 +5,13 @@ import FormUsername from "../components/FormUsername";
 import AddMoreMoney from "../pages/AddMoreMoney";
 import Menu from "../pages/Menu";
 import AMenu from "../pages/A-Menu";
+import ErrorPage from "../components/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

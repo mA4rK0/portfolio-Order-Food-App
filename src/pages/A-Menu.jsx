@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import foodData from "../Food.json";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AddTotalOrder from "../components/AddTotalOrder";
+import ErrorPage from "../components/ErrorPage";
 
 export default function AMenu() {
   const { id } = useParams();
@@ -14,20 +14,24 @@ export default function AMenu() {
     const allItems = foodData.menu.flatMap((category) => category.items);
     const foundMenu = allItems.find((item) => item.id === parseInt(id));
 
-    setMenu(foundMenu);
+    if (foundMenu) {
+      setMenu(foundMenu);
+    } else {
+      throw <ErrorPage />;
+    }
   }, [id]);
+
+  const [menuPrice, setMenuPrice] = useState(menu?.price);
+
+  useEffect(() => {
+    setMenuPrice(menu?.price);
+  }, [menu]);
 
   function handleBtn(e) {
     navigate("/menu");
   }
 
-  if (!menu) {
-    return (
-      <>
-        <h1 className="text-white">Error! Menu Not Found!</h1>
-      </>
-    );
-  } else {
+  if (menu) {
     return (
       <>
         <section className="container text-white w-screen">
@@ -41,7 +45,7 @@ export default function AMenu() {
             <section className="flex flex-col pt-4 gap-y-3">
               <section className="flex flex-wrap justify-between px-5 items-center">
                 <p className="font-semibold text-2xl rounded-full bg-black p-1">{menu.status}</p>
-                <p className="text-yes text-2xl font-bold">${menu.price}</p>
+                <p className="text-yes text-2xl font-bold">${menuPrice}</p>
               </section>
               <section className="flex flex-wrap justify-between px-5 items-center">
                 <p className="font-medium text-xl">{menu.name}</p>

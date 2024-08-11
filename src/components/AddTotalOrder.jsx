@@ -1,22 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function AddTotalOrder() {
   const [total, setTotal] = useState(1);
 
   function addTotal(e) {
+    e.preventDefault();
     setTotal(total + 1);
   }
 
   function decTotal(e) {
+    e.preventDefault();
     if (total > 1) {
       setTotal(total - 1);
     }
   }
 
+  useEffect(() => {
+    console.log(total);
+  }, [total]);
+
   function handleForm(e) {
     e.preventDefault();
+    console.log(total);
   }
 
-  function changeItem(e) {}
+  function changeItem(e) {
+    setTotal(e.target.value);
+  }
 
   return (
     <>
@@ -27,7 +36,7 @@ export default function AddTotalOrder() {
               -
             </button>
           </section>
-          <input type="number" min={1} max={999} value={total} className="text-lg bg-input outline-none font-normal text-center w-10" readOnly />
+          <input type="number" min={1} max={999} onChange={changeItem} value={total} className="text-lg bg-input outline-none font-normal text-center w-10" readOnly />
           <section className="border ease-in-out duration-300 transition hover:shadow-white hover:opacity-80 hover:shadow-md text-lg text-bold rounded-full flex justify-center items-center w-6 h-6 bg-input border-white">
             <button className="pb-1" onClick={(e) => addTotal(e)}>
               +
