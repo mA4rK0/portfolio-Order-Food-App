@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-export default function AddTotalOrder() {
+export default function AddTotalOrder({ changePrice }) {
   const [total, setTotal] = useState(1);
 
   function addTotal(e) {
@@ -16,11 +16,11 @@ export default function AddTotalOrder() {
 
   useEffect(() => {
     console.log(total);
+    changePrice(total);
   }, [total]);
 
   function handleForm(e) {
     e.preventDefault();
-    console.log(total);
   }
 
   function changeItem(e) {

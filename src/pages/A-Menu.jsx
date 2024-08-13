@@ -31,6 +31,13 @@ export default function AMenu() {
     navigate("/menu");
   }
 
+  function changePrice(quantity) {
+    if (menu && menu.price) {
+      let newPrice = (menu.price * quantity).toFixed(2);
+      setMenuPrice(parseFloat(newPrice));
+    }
+  }
+
   if (menu) {
     return (
       <>
@@ -49,7 +56,7 @@ export default function AMenu() {
               </section>
               <section className="flex flex-wrap justify-between px-5 items-center">
                 <p className="font-medium text-xl">{menu.name}</p>
-                <AddTotalOrder />
+                <AddTotalOrder changePrice={changePrice} />
               </section>
               <section className="flex flex-col">
                 <p className="pl-5 items-center">{menu.description}</p>
