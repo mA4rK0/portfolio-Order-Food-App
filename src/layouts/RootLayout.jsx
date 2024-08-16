@@ -9,7 +9,7 @@ function GetClassName({ isActive }) {
 function RootLayout() {
   const [isBottom, setAtBottom] = useState(true);
   const location = useLocation();
-  const hideNavbar = location.pathname.startsWith("/menu/");
+  const hideNavbar = location.pathname.startsWith("/menu/") || location.pathname.startsWith("/cart");
 
   useEffect(() => {
     function handleScroll() {
@@ -32,12 +32,15 @@ function RootLayout() {
           <Outlet />
         </section>
         {!hideNavbar && (
-          <nav className={`flex justify-evenly h-10 text-xl items-center text-white bg-black w-full ${isBottom ? "bg-black" : "bg-black bg-opacity-80 backdrop-blur-sm bottom-0 fixed"}`}>
+          <nav className={`flex justify-around h-10 text-xl items-center text-white bg-black w-full ${isBottom ? "bg-black" : "bg-black bg-opacity-80 backdrop-blur-sm bottom-0 fixed"}`}>
             <NavLink to="/" className={GetClassName}>
               <i className="fa-solid fa-house"></i>
             </NavLink>
             <NavLink to="/username" className={GetClassName}>
               <i className="fa-solid fa-user"></i>
+            </NavLink>
+            <NavLink to="/cart" className={GetClassName}>
+              <i class="fa-solid fa-cart-shopping"></i>
             </NavLink>
             <NavLink to="/money" className={GetClassName}>
               <i className="fa-solid fa-wallet"></i>

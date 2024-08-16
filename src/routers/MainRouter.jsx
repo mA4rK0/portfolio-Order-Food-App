@@ -6,6 +6,7 @@ import AddMoreMoney from "../pages/AddMoreMoney";
 import Menu from "../pages/Menu";
 import AMenu from "../pages/A-Menu";
 import ErrorPage from "../components/ErrorPage";
+import Cart from "../pages/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "menu/:id",
         element: <AMenu />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },
